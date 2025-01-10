@@ -14,9 +14,9 @@ class DataTransformationTrainingPipeline:
                 status = f.read().split(" ")[-1]
             if status == "True":
                 config=ConfigurationManager()
-                data_transformation_config=config.get_data_ingestion_config()
+                data_transformation_config=config.get_data_transformation_config()
                 data_transformation=DataTransformation(config=data_transformation_config)
-                data_transformation.train_test_splitting()
+                data_transformation.train_test_spliting()
             else:
                 raise Exception("Data Validation failed")
         except Exception as e:
